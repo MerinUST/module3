@@ -1,0 +1,5 @@
+spring.dataSource.driver-classname=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/sakila
+spring.username=root
+spring.password=pass@word1
+spring.jpa.hibernate.ddl-auto=create
