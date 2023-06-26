@@ -1,8 +1,0 @@
-package com.ust.ioc2;
-
-public class testDrawing {
-	public static void main(String[] args) {
-		
-	}
-
-}

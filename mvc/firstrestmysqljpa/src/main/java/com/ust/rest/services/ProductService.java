@@ -23,7 +23,7 @@ public class ProductService {
 	UserRepository userRepository;
 
 	public Product getProduct(long productId) {
-		Optional<Product> optional = productRepository.findById(null);
+		Optional<Product> optional = productRepository.findById(productId);
 		if (optional.isPresent())
 			return optional.get();
 		else
@@ -62,10 +62,14 @@ public class ProductService {
 		User user = new User();
 		user.setUserId(5L);
 		user.setDateTime(System.currentTimeMillis() + "76767676767676767676767676767676767676767");
+		
+		
 		//User userT=userRepository.save(user);
 //		//System.out.println(userT);
 //		RuntimeException exception=null;
 //		User userT=null;
+		
+		
 		User userT=userRepository.save(user);
 		
 //		if(userT !=null && productT!=null) {
@@ -79,7 +83,13 @@ public class ProductService {
 	}
 
 	public Product updateProduct(Product product) {
-		return productRepository.save(product);
+		Optional<Product> optional=productRepository.findById(product.getProductId());
+		Product tempproduct=optional.get();
+		tempproduct.setName(product.getName());
+		tempproduct.setDescription(product.getDescription());
+		tempproduct.setPrice(product.getPrice());
+		tempproduct.setQty(product.getQty());
+		return productRepository.save(tempproduct);
 	}
 
 	public void deleteProduct(long productId) {

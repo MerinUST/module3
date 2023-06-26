@@ -1,4 +1,4 @@
-package com.ust.rest.resources;
+  package com.ust.rest.resources;
 
 import java.util.ArrayList;
 import java.util.List;

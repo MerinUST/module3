@@ -1,8 +1,0 @@
-package com.ust.ioc;
-
-public class testLogin {
-	public static void main(String[] args) {
-		
-	}
-
-}
